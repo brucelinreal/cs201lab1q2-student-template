@@ -77,6 +77,7 @@ public class SinglyLinkedList<E> {
     }
 
     public E removeLast(){
+
         Node<E> current = head; 
         E res; 
 
@@ -88,6 +89,7 @@ public class SinglyLinkedList<E> {
             res = head.getElement(); 
             head = null;
             tail = null; 
+            size--;
             return res; 
         }
 
