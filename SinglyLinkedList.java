@@ -85,7 +85,10 @@ public class SinglyLinkedList<E> {
         }
 
         if (head.getNext() == null) {
-            return null; 
+            res = head.getElement(); 
+            head = null;
+            tail = null; 
+            return res; 
         }
 
         while (current.getNext().getNext() != null ){ 
@@ -94,22 +97,23 @@ public class SinglyLinkedList<E> {
         res = current.getNext().getElement();
         current = null; 
         tail = current;
+        size--;
 
         return res; 
     }
 
-    public void reverse(){       
+    public void reverse(){    
+        
+        if (head == null) {
+            return;
+        }
+
         Node<E> current = head;
         Node<E> next = head.getNext(); 
         Node<E> prev = null; 
 
-          if (head == null) {
-            head.setNext(null);; 
-        }
+  
 
-        if (head.getNext() == null) {
-            head.getNext().setNext(null);; 
-        }
         while (current != null) {
             next = current.getNext(); 
             current.getNext().setNext(prev); 
