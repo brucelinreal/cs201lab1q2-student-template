@@ -17,7 +17,7 @@ public class SinglyLinkedList<E> {
     }
 
     public E first(){
-        if (isEmpty()){
+        if (isEmpty()){ //HHAHAHA
             return null;
         } 
         return head.getElement();
