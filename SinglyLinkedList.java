@@ -114,14 +114,14 @@ public class SinglyLinkedList<E> {
 
         while (current.getNext() != null) {
             next = current.getNext(); 
-            current.getNext().setNext(prev); 
+            current.setNext(prev); 
             prev = current; 
             current = next;  
         }
 
-        Node<E> temp = tail; 
-        tail = head;
-        head = temp; 
+        Node<E> temp = head; 
+        head = tail;
+        tail = temp; 
 
     }
 }
