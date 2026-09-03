@@ -23,7 +23,7 @@ public class SinglyLinkedList<E> {
         return head.getElement();
     }
 
-    public E last(){
+    public E last(){    
         if (isEmpty()){
             return null;
         }
@@ -66,15 +66,39 @@ public class SinglyLinkedList<E> {
     }
 
     // Write your codes below
-    public String toString(){
-     
+    public String toString(){ 
+        Node<E> hello = head; 
+        String res = "";
+        while (hello!= null) {
+            res += head.getElement(); 
+            hello = hello.getNext(); 
+        }
+        return res; 
     }
 
     public E removeLast(){
-      
+        Node<E> current = head; 
+        E res; 
+        while (current.getNext().getNext() != null ){ 
+            current = current.getNext(); 
+        }
+        res = current.getNext().getElement();
+        current = null; 
+        tail = current;
+
+        return res; 
     }
 
     public void reverse(){       
-                 
+        Node<E> current = head;
+        Node<E> next = head.getNext(); 
+        Node<E> prev = null; 
+        while (current != null) {
+            next = current.getNext(); 
+            current.getNext().setNext(prev); 
+            prev = current; 
+            current = next;  
+        }
+
     }
 }
