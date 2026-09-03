@@ -95,7 +95,7 @@ public class SinglyLinkedList<E> {
             current = current.getNext(); 
         }
         res = current.getNext().getElement();
-        current = null; 
+        current.setNext(null); 
         tail = current;
         size--;
 
@@ -104,22 +104,24 @@ public class SinglyLinkedList<E> {
 
     public void reverse(){    
         
-        if (head == null) {
-            return;
-        }
+        if (head == null) return;
 
         Node<E> current = head;
-        Node<E> next = head.getNext(); 
+        Node<E> next; 
         Node<E> prev = null; 
 
   
 
-        while (current != null) {
+        while (current.getNext() != null) {
             next = current.getNext(); 
             current.getNext().setNext(prev); 
             prev = current; 
             current = next;  
         }
+
+        Node<E> temp = tail; 
+        tail = head;
+        head = temp; 
 
     }
 }
