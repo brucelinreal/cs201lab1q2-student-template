@@ -79,6 +79,15 @@ public class SinglyLinkedList<E> {
     public E removeLast(){
         Node<E> current = head; 
         E res; 
+
+        if (head == null) {
+            return null; 
+        }
+
+        if (head.getNext() == null) {
+            return null; 
+        }
+
         while (current.getNext().getNext() != null ){ 
             current = current.getNext(); 
         }
@@ -93,6 +102,14 @@ public class SinglyLinkedList<E> {
         Node<E> current = head;
         Node<E> next = head.getNext(); 
         Node<E> prev = null; 
+
+          if (head == null) {
+            head.setNext(null);; 
+        }
+
+        if (head.getNext() == null) {
+            head.getNext().setNext(null);; 
+        }
         while (current != null) {
             next = current.getNext(); 
             current.getNext().setNext(prev); 
