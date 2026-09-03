@@ -112,9 +112,7 @@ public class SinglyLinkedList<E> {
         Node<E> next; 
         Node<E> prev = null; 
 
-  
-
-        while (current.getNext() != null) {
+        while (current != null) {
             next = current.getNext(); 
             current.setNext(prev); 
             prev = current; 
