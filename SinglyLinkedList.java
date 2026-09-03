@@ -70,7 +70,7 @@ public class SinglyLinkedList<E> {
         Node<E> hello = head; 
         String res = "";
         while (hello!= null) {
-            res += head.getElement(); 
+            res += hello.getElement(); 
             hello = hello.getNext(); 
         }
         return res; 
